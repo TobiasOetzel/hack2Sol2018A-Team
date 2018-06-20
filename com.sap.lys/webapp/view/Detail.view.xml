@@ -1,18 +1,76 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="com.sap.lys.controller.Detail">
+<mvc:View 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	controllerName="com.sap.lys.controller.Detail">
  	<Page 
 		title="Title"
 		showNavButton="true"
 		navButtonPress="onNavBack"
 	>
 		<content>
-			<Button text="{ThingId}" width="100px" id="button0"/>
-			 <ObjectAttribute text="{ThingId}" id="attribute0"/>
-		    <sap.ui.iot.controls:IoTChart xmlns:sap.ui.iot.controls="sap.ui.iot.controls" xmlns:sap.ui.iot.elements="sap.ui.iot.elements" id="tchart1" assetId="{ThingId}">
-		        <sap.ui.iot.controls:events>
-		            <sap.ui.iot.elements:IoTEventsOnChartElement businessTimeStamp="" severity="0" eventId="" eventDescription="" eventProperty="" eventStatus="" id="element1"/>
-		        </sap.ui.iot.controls:events>
-		    </sap.ui.iot.controls:IoTChart>
+			
+			<HBox width="100%" height="20%" id="__hbox0">
+				<items>
+					<VBox width="30%" direction="Column" id="__vbox0">
+						<Button text="{ThingId}" width="100px" id="button0"/>
+					</VBox>
+					<VBox width="70%" direction="Column" id="__vbox1">
+						<ObjectAttribute text="{ThingId}" id="attribute0"/>
+					</VBox>
+				</items>
+			</HBox>
+			
+			<f:Form	editable="false">
+				<f:title>
+					<core:Title text="Bemerkung" />
+				</f:title>
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="4"
+						emptySpanL="4"
+						emptySpanM="4"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Name">
+								<f:fields>
+									<Text text="{SupplierName}" id="nameText"  />
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Street">
+								<f:fields>
+									<Text text="{Street} {HouseNumber}" />
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="ZIP Code/City">
+								<f:fields>
+									<Text text="{ZIPCode} {City}" />
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Country">
+								<f:fields>
+									<Text text="{Country}" id="countryText" />
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
 		</content>
 	</Page>
-
 </mvc:View>
