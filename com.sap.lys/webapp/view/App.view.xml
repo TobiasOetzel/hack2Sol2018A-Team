@@ -1,0 +1,16 @@
+<mvc:View 
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:iot="sap.ui.iot.controls" 
+	xmlns:iotele="sap.ui.iot.elements" 
+	xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+	controllerName="com.sap.lys.controller.App" 
+	displayBlock="true">
+	
+	<App id="idAppControl">
+		<Page title="Title">
+			<content></content>
+		</Page>
+	</App>
+</mvc:View>
