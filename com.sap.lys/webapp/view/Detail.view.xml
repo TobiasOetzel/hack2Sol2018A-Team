@@ -1,0 +1,18 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="com.sap.lys.controller.Detail">
+ 	<Page 
+		title="Title"
+		showNavButton="true"
+		navButtonPress="onNavBack"
+	>
+		<content>
+			<Button text="{ThingId}" width="100px" id="button0"/>
+			 <ObjectAttribute text="{ThingId}" id="attribute0"/>
+		    <sap.ui.iot.controls:IoTChart xmlns:sap.ui.iot.controls="sap.ui.iot.controls" xmlns:sap.ui.iot.elements="sap.ui.iot.elements" id="tchart1" assetId="{ThingId}">
+		        <sap.ui.iot.controls:events>
+		            <sap.ui.iot.elements:IoTEventsOnChartElement businessTimeStamp="" severity="0" eventId="" eventDescription="" eventProperty="" eventStatus="" id="element1"/>
+		        </sap.ui.iot.controls:events>
+		    </sap.ui.iot.controls:IoTChart>
+		</content>
+	</Page>
+
+</mvc:View>

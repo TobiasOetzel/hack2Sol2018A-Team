@@ -3,41 +3,23 @@
 	<edmx:DataServices m:DataServiceVersion="1.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
 		xmlns:sap="http://www.sap.com/Protocols/SAPData">
 		<Schema Namespace="com.sap.appiot" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-			<EntityType Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_state" sap:semantics="timeseries">
+			<EntityType Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaData">
 				<Key>
 					<PropertyRef Name="ThingId"></PropertyRef>
 				</Key>
 				<Property Name="ThingId" Type="Edm.String" Nullable="false"></Property>
-				<Property Name="hue_state.Building" Type="Edm.String"></Property>
-				<Property Name="hue_state.Building.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.City" Type="Edm.String"></Property>
-				<Property Name="hue_state.City.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.Country" Type="Edm.String"></Property>
-				<Property Name="hue_state.Country.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.Floor" Type="Edm.String"></Property>
-				<Property Name="hue_state.Floor.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.Position" Type="Edm.String"></Property>
-				<Property Name="hue_state.Position.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.Postalcode" Type="Edm.String"></Property>
-				<Property Name="hue_state.Postalcode.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.Room" Type="Edm.String"></Property>
-				<Property Name="hue_state.Room.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.Street" Type="Edm.String"></Property>
-				<Property Name="hue_state.Street.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.Streetnumber" Type="Edm.String"></Property>
-				<Property Name="hue_state.Streetnumber.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.brightness" Type="Edm.Double"></Property>
-				<Property Name="hue_state.brightness.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.modelid" Type="Edm.String"></Property>
-				<Property Name="hue_state.modelid.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.name" Type="Edm.String"></Property>
-				<Property Name="hue_state.name.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.switched_on" Type="Edm.Boolean"></Property>
-				<Property Name="hue_state.switched_on.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.type" Type="Edm.String"></Property>
-				<Property Name="hue_state.type.Timestamp" Type="Edm.DateTimeOffset"></Property>
-				<Property Name="hue_state.uniqueid" Type="Edm.String"></Property>
-				<Property Name="hue_state.uniqueid.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="bulbMetaData.manufacturerName" Type="Edm.String"></Property>
+				<Property Name="bulbMetaData.manufacturerName.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="bulbMetaData.modelId" Type="Edm.String"></Property>
+				<Property Name="bulbMetaData.modelId.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="bulbMetaData.name" Type="Edm.String"></Property>
+				<Property Name="bulbMetaData.name.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="bulbMetaData.productName" Type="Edm.String"></Property>
+				<Property Name="bulbMetaData.productName.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="bulbMetaData.type" Type="Edm.String"></Property>
+				<Property Name="bulbMetaData.type.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="bulbMetaData.uniqueId" Type="Edm.String"></Property>
+				<Property Name="bulbMetaData.uniqueId.Timestamp" Type="Edm.DateTimeOffset"></Property>
 			</EntityType>
 			<EntityType Name="Thing">
 				<Key>
@@ -128,12 +110,25 @@
 						<LongDescription>Thing AlternateId</LongDescription>
 					</Documentation>
 				</Property>
+				<NavigationProperty Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState"
+					Relationship="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState" FromRole="ThingEntities"
+					ToRole="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbStateEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaData"
+					Relationship="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaData" FromRole="ThingEntities"
+					ToRole="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaDataEntities"></NavigationProperty>
 				<NavigationProperty Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__Image"
 					Relationship="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__Image" FromRole="ThingEntities"
 					ToRole="DYN_ENT_hack2sol_team0_hack2sol_ateam__ImageEntities"></NavigationProperty>
-				<NavigationProperty Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_state"
-					Relationship="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_state" FromRole="ThingEntities"
-					ToRole="DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_stateEntities"></NavigationProperty>
+			</EntityType>
+			<EntityType Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState" sap:semantics="timeseries">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String" Nullable="false"></Property>
+				<Property Name="bulbState.reachable" Type="Edm.Boolean"></Property>
+				<Property Name="bulbState.reachable.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="bulbState.switchedOn" Type="Edm.Boolean"></Property>
+				<Property Name="bulbState.switchedOn.Timestamp" Type="Edm.DateTimeOffset"></Property>
 			</EntityType>
 			<EntityType Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__Image">
 				<Key>
@@ -143,30 +138,42 @@
 				<Property Name="Image.ImageName" Type="Edm.String"></Property>
 				<Property Name="Image.ImageName.Timestamp" Type="Edm.DateTimeOffset"></Property>
 			</EntityType>
+			<Association Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState" Multiplicity="1"
+					Role="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbStateEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaData">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaData" Multiplicity="1"
+					Role="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaDataEntities"></End>
+			</Association>
 			<Association Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__Image">
 				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
 				<End Type="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__Image" Multiplicity="1"
 					Role="DYN_ENT_hack2sol_team0_hack2sol_ateam__ImageEntities"></End>
 			</Association>
-			<Association Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_state">
-				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
-				<End Type="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_state" Multiplicity="1"
-					Role="DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_stateEntities"></End>
-			</Association>
 			<EntityContainer Name="CompositeThingsThingType" m:IsDefaultEntityContainer="true">
-				<EntitySet Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_states"
-					EntityType="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_state"></EntitySet>
+				<EntitySet Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaDatas"
+					EntityType="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaData"></EntitySet>
 				<EntitySet Name="Things" EntityType="com.sap.appiot.Thing"></EntitySet>
+				<EntitySet Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbStates"
+					EntityType="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState"></EntitySet>
 				<EntitySet Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__Images" EntityType="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__Image"></EntitySet>
+				<AssociationSet Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState"
+					Association="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbStates" Role="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbStateEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaData"
+					Association="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaData">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaDatas" Role="DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaDataEntities"></End>
+				</AssociationSet>
 				<AssociationSet Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__Image"
 					Association="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__Image">
 					<End EntitySet="Things" Role="ThingEntities"></End>
 					<End EntitySet="DYN_ENT_hack2sol_team0_hack2sol_ateam__Images" Role="DYN_ENT_hack2sol_team0_hack2sol_ateam__ImageEntities"></End>
-				</AssociationSet>
-				<AssociationSet Name="DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_state"
-					Association="com.sap.appiot.DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_state">
-					<End EntitySet="Things" Role="ThingEntities"></End>
-					<End EntitySet="DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_states" Role="DYN_ENT_hack2sol_team0_hack2sol_ateam__hue_stateEntities"></End>
 				</AssociationSet>
 			</EntityContainer>
 		</Schema>

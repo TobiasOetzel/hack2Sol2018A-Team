@@ -1,7 +1,6 @@
 {
-	"_version": "1.1.0",
+	"_version": "1.8.0",
 	"sap.app": {
-		"_version": "1.1.0",
 		"id": "com.sap.lys",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
@@ -26,7 +25,7 @@
 				}
 			},
 			"Thing_Service1": {
-				"uri": "/IOTAS-DETAILS-THING-ODATA/CompositeThings/ThingType/v1/hack2sol.team0.hack2sol.ateam:Hack2Sol_ATeam_ThingType",
+				"uri": "/IOTAS-DETAILS-THING-ODATA/CompositeThings/ThingType/v1/hack2sol.team0.hack2sol.ateam:bulb",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
@@ -43,7 +42,6 @@
 		}
 	},
 	"sap.ui": {
-		"_version": "1.1.0",
 		"technology": "UI5",
 		"icons": {
 			"icon": "",
@@ -60,21 +58,21 @@
 		},
 		"supportedThemes": [
 			"sap_hcb",
-			"sap_bluecrystal"
+			"sap_belize"
 		]
 	},
 	"sap.ui5": {
 		"_version": "1.1.0",
 		"rootView": {
-			"viewName": "com.sap.lys.view.App",
+			"viewName": "com.sap.lys.view.Launcher",
 			"type": "XML"
 		},
 		"dependencies": {
 			"minUI5Version": "1.30.0",
 			"libs": {
+				"sap.ui.layout": {},
 				"sap.ui.core": {},
-				"sap.m": {},
-				"sap.ui.layout": {}
+				"sap.m": {}
 			}
 		},
 		"contentDensities": {
@@ -85,7 +83,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "test.i18n.i18n"
+					"bundleName": "com.sap.lys.i18n.i18n"
 				}
 			},
 			"events": {
@@ -104,7 +102,7 @@
 					"defaultCountMode": "Inline",
 					"headers": {
 						"sap-iot-eventtype": "com.sap.appiot.eventtypes:StandardEventType",
-						"sap-iot-pst": "hack2sol.team0.hack2sol.ateam:Image,hack2sol.team0.hack2sol.ateam:hue_state"
+						"sap-iot-pst": "hack2sol.team0.hack2sol.ateam:Image,hack2sol.team0.hack2sol.ateam:bulbMetaData,hack2sol.team0.hack2sol.ateam:bulbState"
 					}
 				}
 			},
@@ -135,43 +133,51 @@
 			},
 			"routes": [
 				{
+					"pattern": "Detail/{ThingId}",
+					"name": "Detail_binded",
+					"target": [
+						"Detail"
+					]
+				},
+				{
+					"pattern": "Main",
+					"name": "Main",
+					"target": "Main"
+				},
+				{
 					"pattern": "",
-					"name": "App",
-					"target": "App"
-				},
-				{
-					"pattern": "/overview",
-					"name": "Overview",
-					"target": "Overview"
-				},
-				{
-					"pattern": "workitems",
-					"name": "Workitems",
-					"target": "Workitems"
+					"name": "Launcher",
+					"target": "Launcher"
 				}
 			],
 			"targets": {
-				"Overview": {
-					"viewName": "Overview",
-					"routerClass": "sap.m.routing.Router",
+				"Main": {
 					"viewType": "XML",
+					"viewName": "Main",
+					"routerClass": "sap.m.routing.Router",
 					"async": true,
 					"viewPath": "com.sap.lys.view",
 					"controlAggregation": "pages",
 					"controlId": "idAppControl"
 				},
-				"Workitems": {
-					"viewName": "Workitems",
-					"routerClass": "sap.m.routing.Router",
+				"Detail": {
 					"viewType": "XML",
+					"viewName": "Detail",
+					"routerClass": "sap.m.routing.Router",
 					"async": true,
 					"viewPath": "com.sap.lys.view",
 					"controlAggregation": "pages",
 					"controlId": "idAppControl"
 				},
-				"SensorDetailView": {
+				"Launcher": {
 					"viewType": "XML",
-					"viewName": "SensorDetailView"
+					"viewName": "Launcher"
+				}
+			},
+			"additionalData": {
+				"com.sap.lys.view.Detail": {
+					"routeName": "Detail_binded",
+					"entitySet": "/Things"
 				}
 			}
 		}
