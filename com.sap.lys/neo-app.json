@@ -48,6 +48,13 @@
       }
     },
     {
+      "path": "/iots",
+      "target": {
+        "type": "destination",
+        "name": "iots"
+      }
+    },
+    {
       "path": "/resources",
       "target": {
         "type": "service",

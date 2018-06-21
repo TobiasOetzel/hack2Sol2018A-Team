@@ -67,6 +67,13 @@ modules:
           strictSSL: false
           name: iotae
           url: '~{url}'
+      - name: iots
+        group: destinations
+        properties:
+          forwardAuthToken: false
+          strictSSL: false
+          name: iots
+          url: '~{url}'
       - name: lys-uaa
 resources:
   - name: IOTAS-ADVANCEDLIST-THING-ODATA
@@ -95,3 +102,6 @@ resources:
   - name: iotae
     properties:
       url: 'https://lys-iotae-service-router.cfapps.eu10.hana.ondemand.com'
+  - name: iots
+    properties:
+      url: 'https://47f584a3-765d-4503-a5ba-37f922a2c222.eu10.cp.iot.sap'
