@@ -7,7 +7,7 @@ ar.beforeRequestHandler.use("/api/bulb/change", function changeBulbHandler(req, 
     changeBulb(req,res);
 });
 
-function changeBulb(req, res) {
+async function changeBulb(req, res) {
     var currentThing = req.url.split("/")[1];
     if (!currentThing) {
         httpBadRequest(res);
@@ -15,7 +15,8 @@ function changeBulb(req, res) {
 
     const iotae = new IoTAEClient();
 
-    iotae.getThings().then(function(things) {
+    try {
+        let things = await iotae.getThings();
         // identify new thing
         //   filter things from device 4? -- nope
         //   find the one without location & hue type = new thing
@@ -35,17 +36,15 @@ function changeBulb(req, res) {
         //   delete sensor of broken thing
         //   delete new thing
 
-        return things; // TODO getSensorMapping(thing._id)
-    }).then(function(mapping) {
         res.writeHead(200, {
-        	'Content-Type': 'application/json',
-        	'Cache-Control': 'no-cache'
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache'
         });
         res.end(JSON.stringify(mapping));
-    }).catch(function(reason) {
+    } catch (e) {
         res.writeHead(500);
         res.end(reason.error);
-    });
+    }
 }
 
 function httpBadRequest(res) {
