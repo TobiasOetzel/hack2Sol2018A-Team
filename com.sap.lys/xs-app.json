@@ -29,6 +29,11 @@
 		"target": "$1",
 		"csrfProtection": false
 	}, {
+		"source": "^/iots/(.*)$",
+		"destination": "iots",
+		"target": "$1",
+		"csrfProtection": false
+	}, {
 		"source": "^/webapp/(.*)$",
 		"target": "$1",
 		"localDir": "webapp"
