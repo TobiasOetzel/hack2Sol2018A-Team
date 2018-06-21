@@ -1,4 +1,4 @@
-const approuter = require('@sap/approuter');
+const approuter = require('@sap/approuter')
 const IoTAEClient = require('./lib/IoTAEClient')
 
 var ar = approuter();
@@ -16,7 +16,7 @@ function httpMethodNotAllowed(res) {
     res.end("Method not allowed");
 }
 
-function httpBadMethod(res) {
+function httpBadRequest(res) {
     res.statusCode = 400;
     res.end("Bad request");
 }
@@ -24,7 +24,7 @@ function httpBadMethod(res) {
 function changeBulb(req, res) {
     var currentThing = req.url.split("/")[1];
     if (!currentThing) {
-        httpBadMethod(res);
+        httpBadRequest(res);
     }
 
     const iotae = new IoTAEClient();
