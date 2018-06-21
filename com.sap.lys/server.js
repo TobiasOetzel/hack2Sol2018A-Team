@@ -4,22 +4,8 @@ const IoTAEClient = require('./lib/IoTAEClient')
 var ar = approuter();
 
 ar.beforeRequestHandler.use("/api/bulb/change", function changeBulbHandler(req, res, next) {
-    if (req.method !== "POST") {
-        httpMethodNotAllowed(res);
-    } else {
-        changeBulb(req,res);
-    }
+    changeBulb(req,res);
 });
-
-function httpMethodNotAllowed(res) {
-    res.statusCode = 405;
-    res.end("Method not allowed");
-}
-
-function httpBadRequest(res) {
-    res.statusCode = 400;
-    res.end("Bad request");
-}
 
 function changeBulb(req, res) {
     var currentThing = req.url.split("/")[1];
@@ -51,12 +37,20 @@ function changeBulb(req, res) {
 
         return things; // TODO getSensorMapping(thing._id)
     }).then(function(mapping) {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.writeHead(200, {
+        	'Content-Type': 'application/json',
+        	'Cache-Control': 'no-cache'
+        });
         res.end(JSON.stringify(mapping));
     }).catch(function(reason) {
         res.writeHead(500);
         res.end(reason.error);
     });
+}
+
+function httpBadRequest(res) {
+    res.statusCode = 400;
+    res.end("Bad request");
 }
 
 ar.start();
