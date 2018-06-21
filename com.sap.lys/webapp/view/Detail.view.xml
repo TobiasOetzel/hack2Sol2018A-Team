@@ -21,7 +21,7 @@
 			<html:div class="launchHeader">
 			    <html:img src="./images/replace.svg" class="icon" />
 				<html:div>
-					<Title text="{ThingDescription}" level="H1"/>		
+					<Title text="Resolve Disfunction" level="H1"/>		
 					<html:h2>Maintenance Screen for IoT Devices</html:h2>		
 				</html:div>
 			</html:div>
@@ -31,7 +31,7 @@
 					<f:SimpleForm id="SimpleFormDisplay354"
 						editable="false"
 						layout="ResponsiveGridLayout"
-						title="Address"
+						title="Device Data"
 						labelSpanXL="3"
 						labelSpanL="3"
 						labelSpanM="3"
@@ -47,26 +47,56 @@
 						singleContainerFullSize="false" >
 						<f:content>
 							<Label text="Name" />
-							<Text id="nameText" text="{SupplierName}" />
-							<Label text="Street/No." />
-							<Text text="{Street} {HouseNumber}" />
-							<Label text="ZIP Code/City" />
-							<Text text="{ZIPCode} {City}" />
-							<Label text="Country" />
-							<Text id="countryText" text="{Country}" />
+							<Text id="nameText" text="{ThingDescription}" />
+							
+							<Label text="Manufacturer" />
+							<Text text="{DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaData/bulbMetaData.manufacturerName}" />
+							
+							<Label text="Product" />
+							<Text text="{DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaData/bulbMetaData.productName}" />
 						</f:content>
 					</f:SimpleForm>
 				</VBox>
+
+
+				<VBox class="sapUiSmallMargin">
+					<f:SimpleForm 
+						editable="false"
+						layout="ResponsiveGridLayout"
+						title="Status"
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="4"
+						emptySpanL="4"
+						emptySpanM="4"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" >
+						<f:content>
+							<Label text="Reachable" />
+							<Text text="{DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable}" />
+
+							<Label text="Switched On" />
+							<Text text="{DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.switchedOn}" />
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+				
 				<Button text="Press after Replace" press="onReplacedPressed"></Button>
 			</Panel>
 			
 		</content>
 		
-				<footer>
+		<footer>
 			<Toolbar>
 				<ToolbarSpacer/>
-		        <core:Icon src="sap-icon://sap-logo-shape" size="2em" id="icon0"/>
-				<Text text="SAP"/>
+				<Button type="Accept" text="Replaced"/>
+				<Button type="Reject" text="Follow Up"/>
 			</Toolbar>
 		</footer>
 

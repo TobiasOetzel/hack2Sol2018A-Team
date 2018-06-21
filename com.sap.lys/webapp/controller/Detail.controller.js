@@ -30,8 +30,10 @@ sap.ui.define([
 				var oArgs, oView;
 				oArgs = oEvent.getParameter("arguments");
 				oView = that.getView();
+			
 				oView.bindElement({
 					path:   "/Things(ThingId='" + oArgs.ThingId + "')",
+					parameters : {expand:'DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState, DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbMetaData'},
 					events: {
 						change: _onBindingChange.bind(that),
 						dataRequested: function() {
