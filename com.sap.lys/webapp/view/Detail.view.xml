@@ -6,7 +6,10 @@
 	xmlns:f="sap.ui.layout.form" 
 	xmlns:html="http://www.w3.org/1999/xhtml" 
 	controllerName="com.sap.lys.controller.Detail">
- 	<Page title="Title" 
+ 	
+ 	<Page
+ 	class="detailPage"
+ 	title="Title" 
  	showNavButton="true"
  	showHeader="false"
  	navButtonPress="onNavBack" 

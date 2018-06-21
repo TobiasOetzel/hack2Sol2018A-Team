@@ -50,7 +50,7 @@ html.sap-tablet body .sapUiResponsiveSplitter>.sapUiResponsiveSplitterPage>.sapU
 	padding-left:40px;
 }
 
-.launcherPage {
+.launcherPage, .mainPage, .detailPage {
   background-image: -webkit-gradient(linear, left top, right top,
         color-stop( 0.0, rgb(47, 170, 188) ),
         color-stop( 1.0, rgb(127, 236, 248) ));

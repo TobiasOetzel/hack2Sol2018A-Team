@@ -8,6 +8,18 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oRouter.navTo("Launcher", {}, true);
 		},
 		
+		
+		onListItemPressed : function(oEvent){
+			var oItem, oCtx;
+
+			oItem = oEvent.getSource();
+			oCtx = oItem.getBindingContext();
+
+			this.getOwnerComponent().getRouter().navTo("Detail_binded",{
+				ThingId : oCtx.getProperty("ThingId")
+			});
+		},
+		
 		/**
 		 *@memberOf com.sap.lys.controller.Main
 		 */
