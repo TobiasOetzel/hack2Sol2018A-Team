@@ -32,7 +32,7 @@ function changeBulb(req, res) {
 
     things.then(function(value) {
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(value);
+        res.end(JSON.stringify(value));
     }, function(reason) {
         res.writeHead(500);
         res.end(reason.error);
