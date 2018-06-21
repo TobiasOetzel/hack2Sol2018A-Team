@@ -11,6 +11,7 @@
 	 	class="detailPage"
 	 	title="LYS - Bulb Detail Information " 
 		showNavButton="true"
+		showFooter="true"
 		navButtonPress="onNavBack"
 	 	>
  		
@@ -26,36 +27,48 @@
 			</html:div>
 			
 			<Panel width="auto" class="sapUiResponsiveMargin">
-				<headerToolbar>
-					<Toolbar height="3rem">
-						<Title text="Header"/>
-						<ToolbarSpacer />
-						<Button icon="sap-icon://settings" />
-						<Button icon="sap-icon://drop-down-list" />
-					</Toolbar>
-				</headerToolbar>
-				<content>
-					<Text text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat" />
-				</content>
+				<VBox class="sapUiSmallMargin">
+					<f:SimpleForm id="SimpleFormDisplay354"
+						editable="false"
+						layout="ResponsiveGridLayout"
+						title="Address"
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="4"
+						emptySpanL="4"
+						emptySpanM="4"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" >
+						<f:content>
+							<Label text="Name" />
+							<Text id="nameText" text="{SupplierName}" />
+							<Label text="Street/No." />
+							<Text text="{Street} {HouseNumber}" />
+							<Label text="ZIP Code/City" />
+							<Text text="{ZIPCode} {City}" />
+							<Label text="Country" />
+							<Text id="countryText" text="{Country}" />
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+				<Button text="Press after Replace" press="onReplacedPressed"></Button>
 			</Panel>
-			
-			<!-- https://sapui5.hana.ondemand.com/#/sample/sap.m.sample.StandardMarginsAll/code -->
-			<Panel width="auto" class="sapUiMediumMargin">
-				<Title level="H3" text="Products" />
-				<ToolbarSpacer />
-			</Panel>
-
-			<f:Form editable="false">
-				<f:title>
-					<core:Title text="Bemerkung"/>
-				</f:title>
-				<f:layout>
-					<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
-				</f:layout>
-			</f:Form>
-			
-			<TextArea id="area0" editable="false" rows="5" width="100%" value="{ThingDescription}"/>
 			
 		</content>
+		
+				<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+		        <core:Icon src="sap-icon://sap-logo-shape" size="2em" id="icon0"/>
+				<Text text="SAP"/>
+			</Toolbar>
+		</footer>
+
 	</Page>
 </mvc:View>

@@ -1,9 +1,19 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="com.sap.lys.controller.QR">
+<mvc:View 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	controllerName="com.sap.lys.controller.QR">
 
-	<Page class="testPage" showNavButton="true" navButtonPress="onNavBack" title="LYS - sustainable and economical" backgroundDesign="Solid" showFooter="false">
+	<Page 
+		class="testPage" 
+		showNavButton="true" 
+		navButtonPress="onNavBack" 
+		title="LYS - sustainable and economical" 
+		backgroundDesign="Solid" 
+		showFooter="true">
+		
 		<content>
-
-
 			<html:div class="launchHeader">
 			    <html:img src="./images/test_green.svg"  class="icon" />
 				<html:div>
@@ -31,6 +41,13 @@
 			<content/>
 			</Panel>
 		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+		        <core:Icon src="sap-icon://sap-logo-shape" size="2em" id="icon0"/>
+				<Text text="SAP"/>
+			</Toolbar>
+		</footer>
 	</Page>
 
 </mvc:View>

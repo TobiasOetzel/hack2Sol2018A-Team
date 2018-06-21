@@ -9,6 +9,10 @@ sap.ui.define([
 			oRouter.navTo("Main", {}, true);
 		},
 		
+		onReplacedPressed : function(){
+			alert("Where the magic happens");	
+		},
+		
 		handleNavigationWithContext: function() {
 			var that = this;
 			var entitySet;

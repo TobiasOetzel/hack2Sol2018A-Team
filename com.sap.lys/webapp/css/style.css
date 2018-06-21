@@ -5,6 +5,9 @@ html.sap-tablet body .sapUiResponsiveSplitter>.sapUiResponsiveSplitterPage>.sapU
     content: none;
 }
 
+body {
+	overflow:hidden;
+}
 body, h1, h2, h1 > span, h2 > span{
 	font-family: "Open Sans",Arial,Helvetica,sans-serif !important;
 }
@@ -32,6 +35,16 @@ body, h1, h2, h1 > span, h2 > span{
     width: 100%;
     padding:50px;
 }
+
+.listItem{
+	background-color: #fdfdfd !important;
+    border-radius: 2px !important;
+    color: black !important;
+}
+.listItem *{
+    color: black !important;
+}
+
 .launchHeader {
 	height:140px;
 	background: #253b5b;

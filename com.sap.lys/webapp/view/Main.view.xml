@@ -2,10 +2,9 @@
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns="sap.m" xmlns:iot="sap.ui.iot.controls" 
-	xmlns:iotele="sap.ui.iot.elements" 
 	xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
 	controllerName="com.sap.lys.controller.Main" 
-	displayBlock="true">
+	>
 
 	<Page 
 		class="mainPage" 
@@ -13,9 +12,8 @@
 		navButtonPress="onNavBack"
 		title="LYS - Work Queue" 
 		backgroundDesign="Solid" 
-		showFooter="false">
+		showFooter="true">
 		<content>
-			
 			
 			<html:div class="launchHeader">
 			    <html:img src="./images/workqueue_green.svg"  class="icon"/>
@@ -30,6 +28,7 @@
 				<List class="sapContrast sapContrastPlus" items="{path: '/Things', parameters : {expand:'DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState'}, templateShareable : 'true'}">
 						<items>
 							<NotificationListItem
+									class="listItem"
 									title="{ThingDescription} {DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable}"
 									description="{ThingType}"
 									showCloseButton="false"
@@ -41,7 +40,8 @@
 						</items>
 				</List>
 			</Panel>
+			
 		</content>
-	</Page>
 
+	</Page>
 </mvc:View>

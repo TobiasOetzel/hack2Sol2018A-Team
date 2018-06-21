@@ -2,7 +2,7 @@
 	
 	<App id="idAppControl">
 		<pages>
-			<Page id="launcherPage" class="launcherPage" showHeader="false">
+			<Page id="launcherPage" class="launcherPage" showHeader="false" showFooter="true">
 				<content>
  
 					<html:div class="launchHeader">
@@ -19,6 +19,13 @@
 			        <GenericTile header="Test" subheader="test a sensor" class="tile3 tile" press="onShowTest"/>
 
 				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+				        <core:Icon src="sap-icon://sap-logo-shape" size="2em" id="icon0"/>
+						<Text text="SAP"/>
+					</Toolbar>
+				</footer>
 			</Page>
 		</pages>
 	</App>
