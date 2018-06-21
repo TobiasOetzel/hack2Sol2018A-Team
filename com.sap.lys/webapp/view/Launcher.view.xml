@@ -6,16 +6,17 @@
 				<content>
  
 					<html:div class="launchHeader">
-						<html:img src="./images/bulb.png"></html:img>
+						<html:img src="./images/bulb.png" />
 						<html:div>
 							<html:h1>LYS</html:h1>						
 							<html:h2>sustainable and economical</html:h2>		
 						</html:div>
 					</html:div>
+					
 
 	         	    <GenericTile header="Work Queue" subheader="open issues to solve" class="tile1 tile" press="onShowThings"/>
-			        <GenericTile header="Locations"  subheader="sensor overview"      class="tile2 tile" press="onShowMap"/>
-			        <GenericTile header="Test"       subheader="test a sensor"        class="tile3 tile"/>
+			        <GenericTile header="Locations" subheader="sensor overview" class="tile2 tile" press="onShowMap"/>
+			        <GenericTile header="Test" subheader="test a sensor" class="tile3 tile"/>
 
 				</content>
 			</Page>

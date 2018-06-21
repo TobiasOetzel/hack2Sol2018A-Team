@@ -8,34 +8,36 @@
 	controllerName="com.sap.lys.controller.Detail">
  	
  	<Page
- 	class="detailPage"
- 	title="Title" 
- 	showNavButton="true"
- 	showHeader="false"
- 	navButtonPress="onNavBack" 
- 	id="launcherPage">
+	 	class="detailPage"
+	 	title="LYS - Bulb Detail Information " 
+		showNavButton="true"
+		navButtonPress="onNavBack"
+	 	>
+ 		
 		<content>
-			
-			<HBox width="100%" height="20%" id="__hbox0">
-				<items>
-					<VBox width="30%" direction="Column" id="__vbox0" alignContent="SpaceAround" alignItems="End">
-					   <sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" src="sap-icon://lightbulb" size="5em" id="icon0"/>
-					</VBox>
-					<VBox width="70%" direction="Column" id="__vbox1">
-						<ObjectAttribute text="{ThingId}" id="attribute0"/>
-					</VBox>
-				</items>
-			</HBox>
 
-			<Bar>
-				<contentRight>
-					<Button id="edit" text="Edit" enabled="false" press="handleEditPress" />
-					<Button id="save" text="Save" type="Emphasized" visible="false" press="handleSavePress" />
-					<Button id="cancel" text="Cancel" visible="false" press="handleCancelPress" />
-				</contentRight>
-			</Bar>
-			
-
+ 
+					<html:div class="launchHeader">
+					    <html:img src="./images/replace.svg" />
+						<html:div>
+							<Title text="{ThingDescription}" level="H1"/>		
+							<html:h2>Maintenance Screen for IoT Devices</html:h2>		
+						</html:div>
+					</html:div>
+					
+	<Panel width="auto" class="sapUiResponsiveMargin">
+		<headerToolbar>
+			<Toolbar height="3rem">
+				<Title text="Header"/>
+				<ToolbarSpacer />
+				<Button icon="sap-icon://settings" />
+				<Button icon="sap-icon://drop-down-list" />
+			</Toolbar>
+		</headerToolbar>
+		<content>
+			<Text text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat" />
+		</content>
+	</Panel>
 			<!-- https://sapui5.hana.ondemand.com/#/sample/sap.m.sample.StandardMarginsAll/code -->
 			<Panel width="auto" class="sapUiMediumMargin">
 				<Title level="H3" text="Products" />

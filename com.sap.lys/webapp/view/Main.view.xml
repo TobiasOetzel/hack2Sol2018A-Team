@@ -15,20 +15,23 @@
 		backgroundDesign="Solid" 
 		showFooter="false">
 		<content>
-			<List class="sapContrast sapContrastPlus" items="{path: '/Things', templateShareable : 'true'}">
-					<items>
-						<NotificationListItem
-								title="{ThingName}"
-								description="{ThingType}"
-								showCloseButton="false"
-								datetime="1 hour"
-								unread="true"
-								priority="None"
-								press="onListItemPressed"
-								authorPicture="sap-icon://lightbulb"/>
-					</items>
-			</List>
-			
+
+			<Panel width="auto" class="sapUiMediumMargin">
+				<Title text="ddddd" level="H1"/>
+				<List class="sapContrast sapContrastPlus" items="{path: '/Things', parameters : {expand:'DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState'}, templateShareable : 'true'}">
+						<items>
+							<NotificationListItem
+									title="{ThingDescription} {DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable}"
+									description="{ThingType}"
+									showCloseButton="false"
+									datetime="1 hour"
+									unread="true"
+									priority="None"
+									press="onListItemPressed"
+									authorPicture="sap-icon://lightbulb"/>
+						</items>
+				</List>
+			</Panel>
 		</content>
 	</Page>
 

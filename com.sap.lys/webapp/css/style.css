@@ -5,13 +5,16 @@ html.sap-tablet body .sapUiResponsiveSplitter>.sapUiResponsiveSplitterPage>.sapU
     content: none;
 }
 
-
+body, h1, h2, h1 > span, h2 > span{
+	font-family: "Open Sans",Arial,Helvetica,sans-serif !important;
+}
 .sapContrast.sapMNLI, .sapContrast .sapMNLI {
     background: #45596a;
 }
 
 .sapMPageHeader > div {
 	background: #253b5b !important;
+	box-shadow: none;
 }
 
 .sapMIBar-CTX .sapMTitle {
@@ -36,11 +39,27 @@ html.sap-tablet body .sapUiResponsiveSplitter>.sapUiResponsiveSplitterPage>.sapU
 	float:left;
 }
 
+.launchHeader > .sapUiIcon{
+	font-family: 'SAP-icons';
+    font-size: 3em !important;
+    color: white;
+    vertical-align: super;
+    padding-top: 40px;
+    padding-left: 12px;
+    padding-right: 25px;
+    cursor:pointer;
+    outline: none;
+}
+
+.launchHeader img {
+	padding-left:30px;
+}
 .launchHeader  h1 {
 	color:white;
 	font-size:2em;
 	font-weight:100;
 	padding-left:40px;
+	padding-top: 20px;
 }
 
 .launchHeader h2 {
@@ -48,9 +67,25 @@ html.sap-tablet body .sapUiResponsiveSplitter>.sapUiResponsiveSplitterPage>.sapU
 	font-weight:100;
 	font-size:1em;
 	padding-left:40px;
+	color:#36b8cc;
 }
 
-.launcherPage, .mainPage, .detailPage {
+.launcherPage .launchHeader  h1 {
+	padding-top: 0px;
+}
+
+.detailPage {
+background-color: #8BC6EC;
+background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+
+}
+
+.mainPage {
+	background-color: #8BC6EC;
+	background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
+
+.launcherPage {
   background-image: -webkit-gradient(linear, left top, right top,
         color-stop( 0.0, rgb(47, 170, 188) ),
         color-stop( 1.0, rgb(127, 236, 248) ));
@@ -91,6 +126,11 @@ html.sap-tablet body .sapUiResponsiveSplitter>.sapUiResponsiveSplitterPage>.sapU
 .tile2 > .sapMGTContent {
 	background: transparent url(../images/location.svg) center/cover;
     background-size: 28%;
+}
+
+.tile3 > .sapMGTContent {
+	background: transparent url(../images/test.svg) center/cover;
+    background-size: 94%;
 }
 
 .tile > .sapMGTContent {
