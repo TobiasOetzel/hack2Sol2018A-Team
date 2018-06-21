@@ -9,7 +9,7 @@
 		},
 		"dataSources": {
 			"EventService": {
-				"uri": "/IOTAS-COMPOSITE-EVENTS-ODATA/CompositeEvents/EventType/v1/com.sap.appiot.eventtypes:StandardEventType",
+				"uri": "/iotae/composite-events-odata/CompositeEvents/EventType/v1/com.sap.appiot.eventtypes:StandardEventType",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
@@ -17,7 +17,7 @@
 				}
 			},
 			"mainService": {
-				"uri": "/IOTAS-ADVANCEDLIST-THING-ODATA/CompositeThings/v1/",
+				"uri": "/iotae/advancedlist-thing-sap/CompositeThings/v1/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
@@ -25,7 +25,7 @@
 				}
 			},
 			"Thing_Service1": {
-				"uri": "/IOTAS-DETAILS-THING-ODATA/CompositeThings/ThingType/v1/hack2sol.team0.hack2sol.ateam:bulb",
+				"uri": "/iotae/details-thing-sap/CompositeThings/ThingType/v1/hack2sol.team0.hack2sol.ateam:bulb",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
