@@ -1,4 +1,5 @@
-var approuter = require('@sap/approuter');
+const approuter = require('@sap/approuter');
+const IoTAEClient = require('./lib/IoTAEClient')
 
 var ar = approuter();
 
@@ -26,9 +27,16 @@ function changeBulb(req, res) {
         httpBadMethod(res);
     }
 
-    req.url.split("/")
-    res.statusCode = 200;
-    res.end();
+    var iotae = new IoTAEClient();
+    var things = iotae.getThings();
+
+    things.then(function(value) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(value);
+    }, function(reason) {
+        res.writeHead(500);
+        res.end(reason.error);
+    });
 }
 
 ar.start();
