@@ -141,6 +141,11 @@
 					]
 				},
 				{
+					"pattern": "Map",
+					"name": "Map",
+					"target": "Map"
+				},
+				{
 					"pattern": "Main",
 					"name": "Main",
 					"target": "Main"
@@ -157,6 +162,7 @@
 					"viewName": "Main",
 					"routerClass": "sap.m.routing.Router",
 					"async": true,
+					"viewLevel": 1,
 					"viewPath": "com.sap.lys.view",
 					"controlAggregation": "pages",
 					"controlId": "idAppControl"
@@ -166,13 +172,30 @@
 					"viewName": "Detail",
 					"routerClass": "sap.m.routing.Router",
 					"async": true,
+					"viewLevel": 2,
 					"viewPath": "com.sap.lys.view",
 					"controlAggregation": "pages",
 					"controlId": "idAppControl"
 				},
 				"Launcher": {
 					"viewType": "XML",
-					"viewName": "Launcher"
+					"viewLevel": 0,
+					"viewName": "Launcher",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "com.sap.lys.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl"
+				},
+				"Map": {
+					"viewType": "XML",
+					"viewName": "Map",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewLevel": 1,
+					"viewPath": "com.sap.lys.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl"
 				}
 			},
 			"additionalData": {

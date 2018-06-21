@@ -8,6 +8,10 @@ sap.ui.define([
         onShowThings : function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("Main");
+        },
+        onShowMap : function() {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("Map");
         }
 	});
 

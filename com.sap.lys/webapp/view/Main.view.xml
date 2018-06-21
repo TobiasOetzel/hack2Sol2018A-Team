@@ -10,10 +10,25 @@
 	<Page 
 		showNavButton="true"
 		navButtonPress="onNavBack"
-		title="{i18n>title}" 
+		title="LYS - Work Queue" 
 		backgroundDesign="Solid" 
 		showFooter="false">
 		<content>
+			<List class="sapContrast sapContrastPlus" items="{path: '/Things', templateShareable : 'true'}">
+					<items>
+
+						<NotificationListItem
+								title="{ThingName}"
+								description="{ThingType}"
+								showCloseButton="false"
+								datetime="1 hour"
+								unread="true"
+								priority="None"
+								press="onListItemPress"
+								authorPicture="sap-icon://car-rental"/>
+					</items>
+			</List>
+			
 			
 		    <iot:IoTThingList things="{path:'/Things',parameters:{expand:'DYN_ENT_com_sap_appiot_eventtypes__StandardEventType'}}" id="list0" thingListMode="None">
 		        <iot:columns>
@@ -23,7 +38,7 @@
 		        <iot:things>
 		            <iotele:IoTThingListElement thingImage="{ThingId}" highSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/High}" mediumSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Medium}" lowSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Low}" id="element0" itemPress="action" action:wiring="\{'itemPress':\{'navigation':\{'routeName':'Detail_binded','keys':[\{'name':'ThingId','type':'Edm.String'\}]\}\}\}">
 		                <iotele:cells>
-		                    <iotele:IoTThingListColumn text="{ThingId}" id="column0"/>
+		                    <iotele:IoTThingListColumn text="{ThingId}"   id="column0"/>
 		                    <iotele:IoTThingListColumn text="{ThingName}" id="column1"/>
 		                    <iotele:IoTThingListColumn text="{ThingType}" id="column2"/></iotele:cells>
 		            </iotele:IoTThingListElement>

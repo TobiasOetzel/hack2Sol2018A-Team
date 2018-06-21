@@ -2,75 +2,54 @@
 	xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns="sap.m" 
-	xmlns:l="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
 	xmlns:html="http://www.w3.org/1999/xhtml" 
 	controllerName="com.sap.lys.controller.Detail">
- 	<Page 
-		title="Title"
-		showNavButton="true"
-		navButtonPress="onNavBack"
-	>
+ 	<Page title="Title" 
+ 	showNavButton="true"
+ 	showHeader="false"
+ 	navButtonPress="onNavBack" 
+ 	id="launcherPage">
 		<content>
 			
 			<HBox width="100%" height="20%" id="__hbox0">
 				<items>
-					<VBox width="30%" direction="Column" id="__vbox0">
-						<Button text="{ThingId}" width="100px" id="button0"/>
+					<VBox width="30%" direction="Column" id="__vbox0" alignContent="SpaceAround" alignItems="End">
+					   <sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" src="sap-icon://lightbulb" size="5em" id="icon0"/>
 					</VBox>
 					<VBox width="70%" direction="Column" id="__vbox1">
 						<ObjectAttribute text="{ThingId}" id="attribute0"/>
 					</VBox>
 				</items>
 			</HBox>
+
+			<Bar>
+				<contentRight>
+					<Button id="edit" text="Edit" enabled="false" press="handleEditPress" />
+					<Button id="save" text="Save" type="Emphasized" visible="false" press="handleSavePress" />
+					<Button id="cancel" text="Cancel" visible="false" press="handleCancelPress" />
+				</contentRight>
+			</Bar>
 			
-			<f:Form	editable="false">
+
+			<!-- https://sapui5.hana.ondemand.com/#/sample/sap.m.sample.StandardMarginsAll/code -->
+			<Panel width="auto" class="sapUiMediumMargin">
+				<Title level="H3" text="Products" />
+				<ToolbarSpacer />
+			</Panel>
+
+			<f:Form editable="false">
 				<f:title>
-					<core:Title text="Bemerkung" />
+					<core:Title text="Bemerkung"/>
 				</f:title>
 				<f:layout>
-					<f:ResponsiveGridLayout
-						labelSpanXL="3"
-						labelSpanL="3"
-						labelSpanM="3"
-						labelSpanS="12"
-						adjustLabelSpan="false"
-						emptySpanXL="4"
-						emptySpanL="4"
-						emptySpanM="4"
-						emptySpanS="0"
-						columnsXL="1"
-						columnsL="1"
-						columnsM="1"
-						singleContainerFullSize="false" />
+					<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
 				</f:layout>
-				<f:formContainers>
-					<f:FormContainer>
-						<f:formElements>
-							<f:FormElement label="Name">
-								<f:fields>
-									<Text text="{SupplierName}" id="nameText"  />
-								</f:fields>
-							</f:FormElement>
-							<f:FormElement label="Street">
-								<f:fields>
-									<Text text="{Street} {HouseNumber}" />
-								</f:fields>
-							</f:FormElement>
-							<f:FormElement label="ZIP Code/City">
-								<f:fields>
-									<Text text="{ZIPCode} {City}" />
-								</f:fields>
-							</f:FormElement>
-							<f:FormElement label="Country">
-								<f:fields>
-									<Text text="{Country}" id="countryText" />
-								</f:fields>
-							</f:FormElement>
-						</f:formElements>
-					</f:FormContainer>
-				</f:formContainers>
 			</f:Form>
+			
+			<TextArea id="area0" editable="false" rows="5" width="100%" value="{ThingDescription}"/>
+			
 		</content>
 	</Page>
 </mvc:View>

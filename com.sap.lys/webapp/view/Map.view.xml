@@ -1,0 +1,29 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="com.sap.lys.controller.Map">
+
+	<Page 
+		showNavButton="true"
+		navButtonPress="onNavBack"
+		title="LYS - sensor location overview" 
+		backgroundDesign="Solid" 
+		enableScrolling="false"
+		showFooter="false">
+				<content>
+
+				    <sap.ui.iot.controls:IoTMap 
+				    things="{path:'/Things',parameters:{expand:'DYN_ENT_com_sap_appiot_eventtypes__StandardEventType'}}" 
+				    xmlns:sap.ui.iot.controls="sap.ui.iot.controls" 
+				    xmlns:sap.ui.iot.elements="sap.ui.iot.elements" 
+				    id="tmap0">
+				        <sap.ui.iot.controls:things>
+				            <sap.ui.iot.elements:IoTMapElement thingid="{ThingId}" longitude="{Longitude}" latitude="{Latitude}" id="element2">
+				                <sap.ui.iot.elements:status>
+				                    <sap.ui.iot.elements:IoTStatusElement highSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/High}" mediumSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Medium}" lowSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Low}" id="element0"/>
+				                </sap.ui.iot.elements:status>
+				                <sap.ui.iot.elements:thingcard>
+				                    <sap.ui.iot.elements:IoTThingCardElement thingCardImage="{ThingId}" SingleThingCardHeaderPosition1="{ThingName}" SingleThingCardHeaderPosition2="{ThingId}" SingleThingCardHeaderPosition3="{ThingType}" SingleThingCardContactInfo1="{BusinessPartnerName}" SingleThingCardContactInfo2="{BPMobilePhoneNumber}" SingleThingCardContactInfo3="{BPLandlinePhoneNumber}" MultiThingCardHeaderPosition1="{ThingName}" MultiThingCardHeaderPosition2="{ThingId}" SingleThingCardEventsVisible="true" SingleThingCardContactsVisible="true" id="element1"/>
+				                </sap.ui.iot.elements:thingcard></sap.ui.iot.elements:IoTMapElement>
+				        </sap.ui.iot.controls:things>
+				    </sap.ui.iot.controls:IoTMap>
+				</content>
+	</Page>
+</mvc:View>
