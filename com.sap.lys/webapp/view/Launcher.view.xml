@@ -16,10 +16,11 @@
 
 	         	    <GenericTile header="Work Queue" subheader="open issues to solve" class="tile1 tile" press="onShowThings"/>
 			        <GenericTile header="Locations" subheader="sensor overview" class="tile2 tile" press="onShowMap"/>
-			        <GenericTile header="Test" subheader="test a sensor" class="tile3 tile"/>
+			        <GenericTile header="Test" subheader="test a sensor" class="tile3 tile" press="onShowTest"/>
 
 				</content>
 			</Page>
 		</pages>
 	</App>
+	
 </mvc:View>

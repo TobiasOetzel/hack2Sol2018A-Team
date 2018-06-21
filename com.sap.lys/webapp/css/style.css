@@ -27,6 +27,11 @@ body, h1, h2, h1 > span, h2 > span{
 	text-shadow:none;	
 }
 
+.centerText {
+	text-align: center;
+    width: 100%;
+    padding:50px;
+}
 .launchHeader {
 	height:140px;
 	background: #253b5b;
@@ -51,8 +56,10 @@ body, h1, h2, h1 > span, h2 > span{
     outline: none;
 }
 
-.launchHeader img {
+.launchHeader img.icon {
 	padding-left:30px;
+	-webkit-filter: drop-shadow( 2px 2px 7px rgba(255,255,255,0.3)); 
+            filter: drop-shadow( 2px 2px 7px rgba(255,255,255,0.3));
 }
 .launchHeader  h1 {
 	color:white;
@@ -74,10 +81,15 @@ body, h1, h2, h1 > span, h2 > span{
 	padding-top: 0px;
 }
 
-.detailPage {
-background-color: #8BC6EC;
-background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+.testPage{
+background: #E0EAFC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
+.detailPage {
+	background-color: #8BC6EC;
+	background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 }
 
 .mainPage {

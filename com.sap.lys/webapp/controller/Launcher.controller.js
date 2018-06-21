@@ -12,6 +12,10 @@ sap.ui.define([
         onShowMap : function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("Map");
+        },
+        onShowTest : function() {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("QR");
         }
 	});
 

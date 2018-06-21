@@ -15,9 +15,18 @@
 		backgroundDesign="Solid" 
 		showFooter="false">
 		<content>
+			
+			
+			<html:div class="launchHeader">
+			    <html:img src="./images/workqueue_green.svg"  class="icon"/>
+				<html:div>
+					<Title text="Work Queue" level="H1"/>		
+					<html:h2>Listed devices reported an issue</html:h2>		
+				</html:div>
+			</html:div>
+			
 
 			<Panel width="auto" class="sapUiMediumMargin">
-				<Title text="ddddd" level="H1"/>
 				<List class="sapContrast sapContrastPlus" items="{path: '/Things', parameters : {expand:'DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState'}, templateShareable : 'true'}">
 						<items>
 							<NotificationListItem
@@ -26,7 +35,7 @@
 									showCloseButton="false"
 									datetime="1 hour"
 									unread="true"
-									priority="None"
+									priority="{= ${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable} ? 'Medium': 'High' }"
 									press="onListItemPressed"
 									authorPicture="sap-icon://lightbulb"/>
 						</items>

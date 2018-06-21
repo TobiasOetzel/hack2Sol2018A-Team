@@ -1,0 +1,36 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="com.sap.lys.controller.QR">
+
+	<Page class="testPage" showNavButton="true" navButtonPress="onNavBack" title="LYS - sustainable and economical" backgroundDesign="Solid" showFooter="false">
+		<content>
+
+
+			<html:div class="launchHeader">
+			    <html:img src="./images/test_green.svg"  class="icon" />
+				<html:div>
+					<Title text="Test a Bulb" level="H1"/>		
+					<html:h2>Test the functionality fo a bulb</html:h2>		
+				</html:div>
+			</html:div>
+			
+			<Panel width="auto" class="sapUiMediumMargin">
+				<FlexBox width="100%" alignItems="Center" alignContent="Center" justifyContent="Center">
+				    <items>
+				        <Image xmlns="sap.m" width="140px" height="140px" id="image0" src="./images/qr.svg"/>
+				    </items>
+				</FlexBox>
+				
+				<Title class="centerText" level="H2" text="Scan QR-Code of the lamp to enable the test functionality"/>
+
+				<FlexBox width="100%" alignItems="Center" alignContent="Center" justifyContent="Center">
+				    <items>
+				        <Switch state="true">
+							
+						</Switch>
+				    </items>
+				</FlexBox>
+			<content/>
+			</Panel>
+		</content>
+	</Page>
+
+</mvc:View>

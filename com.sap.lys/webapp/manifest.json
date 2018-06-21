@@ -151,6 +151,11 @@
 					"target": "Main"
 				},
 				{
+					"pattern": "QR",
+					"name": "QR",
+					"target": "QR"
+				},
+				{
 					"pattern": "",
 					"name": "Launcher",
 					"target": "Launcher"
@@ -196,6 +201,14 @@
 					"viewPath": "com.sap.lys.view",
 					"controlAggregation": "pages",
 					"controlId": "idAppControl"
+				},
+				"QR": {
+					"viewType": "XML",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewLevel": 1,
+					"viewPath": "com.sap.lys.view",
+					"viewName": "QR"
 				}
 			},
 			"additionalData": {
