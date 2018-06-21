@@ -2,7 +2,7 @@
   "welcomeFile": "/webapp/index.html",
   "routes": [
     {
-      "path": "/IOTAS-ADVANCEDLIST-THING-ODATA",
+      "path": "/iotae/advancedlist-thing-sap",
       "target": {
         "type": "destination",
         "name": "IOTAS-ADVANCEDLIST-THING-ODATA"
@@ -10,7 +10,7 @@
       "description": "IOTAS-ADVANCEDLIST-THING-ODATA"
     },
     {
-      "path": "/IOTAS-DETAILS-THING-ODATA",
+      "path": "/iotae/details-thing-sap",
       "target": {
         "type": "destination",
         "name": "IOTAS-DETAILS-THING-ODATA"
@@ -18,7 +18,7 @@
       "description": "IOTAS-DETAILS-THING-ODATA"
     },
     {
-      "path": "/IOTAS-COMPOSITE-EVENTS-ODATA",
+      "path": "/iotae/composite-events-odata",
       "target": {
         "type": "destination",
         "name": "IOTAS-COMPOSITE-EVENTS-ODATA"
@@ -38,16 +38,14 @@
       "target": {
         "type": "destination",
         "name": "IOTAS"
-      },
-      "description": "SAPUI5 Test Resources"
+      }
     },
     {
       "path": "/backend-image/",
       "target": {
         "type": "destination",
         "name": "IOTAS-FILEIMAGE"
-      },
-      "description": "SAPUI5 Test Resources"
+      }
     },
     {
       "path": "/resources",

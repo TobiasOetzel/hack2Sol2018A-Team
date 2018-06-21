@@ -60,6 +60,13 @@ modules:
           strictSSL: false
           name: sapui52
           url: '~{url}'
+      - name: iotae
+        group: destinations
+        properties:
+          forwardAuthToken: true
+          strictSSL: false
+          name: iotae
+          url: '~{url}'
       - name: lys-uaa
 resources:
   - name: IOTAS-ADVANCEDLIST-THING-ODATA
@@ -85,3 +92,6 @@ resources:
       url: 'https://sapui5.hana.ondemand.com'
   - name: lys-uaa
     type: org.cloudfoundry.existing-service
+  - name: iotae
+    properties:
+      url: 'https://lys-iotae-service-router.cfapps.eu10.hana.ondemand.com'
