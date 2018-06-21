@@ -22,18 +22,38 @@ function httpBadMethod(res) {
 }
 
 function changeBulb(req, res) {
-    var thing = req.url.split("/")[1];
-    if (!thing) {
+    var currentThing = req.url.split("/")[1];
+    if (!currentThing) {
         httpBadMethod(res);
     }
 
-    var iotae = new IoTAEClient();
-    var things = iotae.getThings();
+    const iotae = new IoTAEClient();
 
-    things.then(function(value) {
+    iotae.getThings().then(function(things) {
+        // identify new thing
+        //   filter things from device 4? -- nope
+        //   find the one without location & hue type = new thing
+
+        let newThing;
+        things.value.forEach(function(thing) {
+            if (!newThing && thing._thingType[0].includes("bulb") && !thing.hasOwnProperty("_location")) {
+                newThing = thing;
+            }
+        });
+        console.log(newThing);
+
+        //   get sensor of broken thing
+        //   get sensor of new thing
+        //   delete mapping of both things
+        //   map sensor of new thing to current thing
+        //   delete sensor of broken thing
+        //   delete new thing
+
+        return things; // TODO getSensorMapping(thing._id)
+    }).then(function(mapping) {
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify(value));
-    }, function(reason) {
+        res.end(JSON.stringify(mapping));
+    }).catch(function(reason) {
         res.writeHead(500);
         res.end(reason.error);
     });
