@@ -9,15 +9,13 @@
  	
  	<Page
 	 	class="detailPage"
-	 	title="LYS - Bulb Detail Information " 
+		title="L Y S - sustainable and economical" 
 		showNavButton="true"
 		showFooter="true"
 		navButtonPress="onNavBack"
 	 	>
  		
 		<content>
-
-
 			<html:div class="launchHeader">
 			    <html:img src="./images/replace.svg" class="icon" />
 				<html:div>

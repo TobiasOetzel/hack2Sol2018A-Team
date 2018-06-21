@@ -3,7 +3,7 @@
 	<Page 
 		showNavButton="true"
 		navButtonPress="onNavBack"
-		title="LYS - sensor location overview" 
+		title="L Y S - sustainable and economical" 
 		backgroundDesign="Solid" 
 		enableScrolling="false"
 		showFooter="false">

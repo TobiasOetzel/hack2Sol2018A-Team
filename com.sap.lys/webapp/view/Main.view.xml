@@ -10,7 +10,7 @@
 		class="mainPage" 
 		showNavButton="true"
 		navButtonPress="onNavBack"
-		title="LYS - Work Queue" 
+		title="L Y S - sustainable and economical" 
 		backgroundDesign="Solid" 
 		showFooter="true">
 		<content>
@@ -29,10 +29,10 @@
 						<items>
 							<NotificationListItem
 									class="listItem"
-									title="{ThingDescription} {DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable}"
-									description="{ThingType}"
+									title="{ThingDescription}"
+									description="{= ${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable} ? 'Device not reachable': 'Device is broken'} "
 									showCloseButton="false"
-									datetime="1 hour"
+									datetime=""
 									unread="true"
 									priority="{= ${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable} ? 'Medium': 'High' }"
 									press="onListItemPressed"

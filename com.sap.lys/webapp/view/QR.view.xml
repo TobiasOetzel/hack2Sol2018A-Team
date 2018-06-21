@@ -9,7 +9,7 @@
 		class="testPage" 
 		showNavButton="true" 
 		navButtonPress="onNavBack" 
-		title="LYS - sustainable and economical" 
+		title="L Y S - sustainable and economical" 
 		backgroundDesign="Solid" 
 		showFooter="true">
 		
@@ -25,7 +25,7 @@
 			<Panel width="auto" class="sapUiMediumMargin">
 				<FlexBox width="100%" alignItems="Center" alignContent="Center" justifyContent="Center">
 				    <items>
-				        <Image xmlns="sap.m" width="140px" height="140px" id="image0" src="./images/qr.svg"/>
+				        <Image xmlns="sap.m" height="200px" id="image0" src="./images/qr.svg"/>
 				    </items>
 				</FlexBox>
 				

@@ -23,6 +23,7 @@ body, h1, h2, h1 > span, h2 > span{
 .sapMIBar-CTX .sapMTitle {
 	color:white;
 	text-shadow:none;
+	opacity: 0.5;
 }
 
 .sapMIBar-CTX .sapMBtnIcon {
@@ -37,7 +38,7 @@ body, h1, h2, h1 > span, h2 > span{
 }
 
 .listItem{
-	background-color: #fdfdfd !important;
+	background-color: rgba(253, 253, 253, 0.6) !important;
     border-radius: 2px !important;
     color: black !important;
 }
@@ -50,6 +51,7 @@ body, h1, h2, h1 > span, h2 > span{
 	background: #253b5b;
 	display:block;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	border-bottom: 1px solid #EE6E73;
 }
 
 .launchHeader > * {
@@ -69,6 +71,9 @@ body, h1, h2, h1 > span, h2 > span{
     outline: none;
 }
 
+.sapMShellBrandingBar {
+	display: none;
+}
 .launchHeader img.icon {
 	padding-left:30px;
 	-webkit-filter: drop-shadow( 2px 2px 7px rgba(255,255,255,0.3)); 
@@ -80,6 +85,7 @@ body, h1, h2, h1 > span, h2 > span{
 	font-weight:100;
 	padding-left:40px;
 	padding-top: 20px;
+	margin-bottom: 6px;
 }
 
 .launchHeader h2 {
@@ -87,7 +93,8 @@ body, h1, h2, h1 > span, h2 > span{
 	font-weight:100;
 	font-size:1em;
 	padding-left:40px;
-	color:#36b8cc;
+	color:#EE6E73;
+	margin-top:0px;
 }
 
 .launcherPage .launchHeader  h1 {
@@ -103,6 +110,10 @@ background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, F
 .detailPage {
 	background-color: #8BC6EC;
 	background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
+
+-detailPage .sapMLabelDisplayOnly {
+	color:#EE6E73 !important;	
 }
 
 .mainPage {
