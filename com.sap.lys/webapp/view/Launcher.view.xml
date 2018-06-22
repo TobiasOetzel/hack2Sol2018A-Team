@@ -28,6 +28,7 @@
 	         	    <GenericTile header="Work Queue" subheader="open issues to solve" class="tile1 tile" press="onShowThings"/>
 			        <GenericTile header="Locations" subheader="sensor overview" class="tile2 tile" press="onShowMap"/>
 			        <GenericTile header="Test" subheader="test a sensor" class="tile3 tile" press="onShowTest"/>
+			        <GenericTile header="Tutorial" subheader="getting started guide" class="tile4 tile" press="onShowHelp"/>
 		
 
 				</content>
