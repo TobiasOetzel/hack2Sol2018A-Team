@@ -2,24 +2,22 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/ui/core/routing/History"], function(Controller, History) {
 	"use strict";
 	var timer;
-	
+
 	return Controller.extend("com.sap.lys.controller.Main", {
 		
 		onInit: function() {
 			var thingList = this.getView().byId("thingList");
 			setTimeout(function(){
-				console.log("register timer");
 				var thingListBinding = thingList.getBinding("items");
 				
 				timer= window.setInterval(function(){
 					thingListBinding.refresh(true);
-				}, 3000);
+				}, 1000);
 			},5000);
 			//oCtx = oItem.getBindingContext();
 		},
 		
 		onExit: function() {
-			console.log("unregister timer");
 			clearInterval(timer);
 		},
 		
