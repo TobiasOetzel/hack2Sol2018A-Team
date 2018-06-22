@@ -1,5 +1,5 @@
 const approuter = require('@sap/approuter')
-const IoTAEClient = require('./lib/IoTAEClient')
+const IotAEClient = require('./lib/IotAEClient')
 
 var ar = approuter();
 
@@ -8,15 +8,15 @@ ar.beforeRequestHandler.use("/api/bulb/change", function changeBulbHandler(req, 
 });
 
 async function changeBulb(req, res) {
-    var currentThing = req.url.split("/")[1];
-    if (!currentThing) {
-        httpBadRequest(res);
+    var currentThingId = req.url.split("/")[1];
+    if (!currentThingId) {
+        httpBadMethod(res);
     }
 
-    const iotae = new IoTAEClient();
+    const iotae = new IotAEClient();
+    const iotservices = new IotServiceRestClient();
 
-    try {
-        let things = await iotae.getThings();
+    iotae.getThings().then(function(things) {
         // identify new thing
         //   filter things from device 4? -- nope
         //   find the one without location & hue type = new thing
@@ -30,21 +30,27 @@ async function changeBulb(req, res) {
         console.log(newThing);
 
         //   get sensor of broken thing
+        //		var brokenSensorId = iotae.getMappingForThing(currentThingId)
         //   get sensor of new thing
-        //   delete mapping of both things
-        //   map sensor of new thing to current thing
-        //   delete sensor of broken thing
-        //   delete new thing
+        //		var newSensorId = iotae.getMappingForThing(newThing._id)
+        //   delete mapping of both things 
+        //		iotae.deleteMappingForThing(currentThingId)
+        //		iotae.deleteMappingForThing(newThing._id)
+        //   map sensor of new thing to current thing 
+        //		iotae.createMappingForThing(currentThingId, newSensorId)
+        //   delete sensor of broken thing 
+        //		iotservices.deleteSensor(brokenSensorId)
+        //   delete new thing 
+        //		iotae.deleteThing(newThing._id)
 
-        res.writeHead(200, {
-            'Content-Type': 'application/json',
-            'Cache-Control': 'no-cache'
-        });
+        return things; 
+    }).then(function(mapping) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(mapping));
-    } catch (e) {
+    }).catch(function(reason) {
         res.writeHead(500);
         res.end(reason.error);
-    }
+    });
 }
 
 function httpBadRequest(res) {
