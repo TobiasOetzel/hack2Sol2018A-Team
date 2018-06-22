@@ -1,4 +1,4 @@
-onst approuter = require('@sap/approuter')
+const approuter = require('@sap/approuter')
 const IotAEClient = require('./lib/IotAEClient')
 
 var ar = approuter();
@@ -8,8 +8,8 @@ ar.beforeRequestHandler.use("/api/bulb/change", function changeBulbHandler(req, 
 });
 
 async function changeBulb(req, res) {
-    var currentThing = req.url.split("/")[1];
-    if (!currentThing) {
+    var currentThingId = req.url.split("/")[1];
+    if (!currentThingId) {
         httpBadRequest(res);
     }
 
@@ -29,6 +29,8 @@ async function changeBulb(req, res) {
         });
         console.log(newThing);
 
+		//let sensorMapping = iotae.getSensorMapping(currentThingId);
+		//sensorMapping.find(mapping => mapping)
         //   get sensor of broken thing
         //   get sensor of new thing
         //   delete mapping of both things
