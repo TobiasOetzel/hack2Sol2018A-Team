@@ -1,7 +1,6 @@
 const approuter = require('@sap/approuter')
-const IotAEClient = require('./lib/IotAEClient')
-
-var ar = approuter();
+const entityDeleter = require('./lib/entityDeleter')
+let ar = approuter();
 
 ar.beforeRequestHandler.use("/api/bulb/change", function changeBulbHandler(req, res, next) {
     changeBulb(req,res);
@@ -13,32 +12,11 @@ async function changeBulb(req, res) {
         httpBadRequest(res);
     }
 
-    const iotae = new IotAEClient();
 
     try {
-        let things = await iotae.getThings();
-        // identify new thing
-        //   filter things from device 4? -- nope
-        //   find the one without location & hue type = new thing
+		await entityDeleter.deleteTemporaryThing(currentThingId);
 
-        let newThing;
-        things.value.forEach(function(thing) {
-            if (!newThing && thing._thingType[0].includes("bulb") && !thing.hasOwnProperty("_location")) {
-                newThing = thing;
-            }
-        });
-        console.log(newThing);
-
-		//let sensorMapping = iotae.getSensorMapping(currentThingId);
-		//sensorMapping.find(mapping => mapping)
-        //   get sensor of broken thing
-        //   get sensor of new thing
-        //   delete mapping of both things
-        //   map sensor of new thing to current thing
-        //   delete sensor of broken thing
-        //   delete new thing
-
-        res.writeHead(200, {
+		res.writeHead(200, {
             'Content-Type': 'application/json',
             'Cache-Control': 'no-cache'
         });
