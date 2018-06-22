@@ -1,3 +1,3 @@
 const entityDeleter = require('../lib/entityDeleter')
 
-entityDeleter.deleteTemporaryThing('FA0198F62D3C4D6EB3735478FD79F877')
+entityDeleter.deleteTemporaryThing('2CED9F6A4E9B4E9FB383DFDDBC6298C3')

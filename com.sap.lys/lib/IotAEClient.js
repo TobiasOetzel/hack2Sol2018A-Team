@@ -21,12 +21,12 @@ class IotAEClient {
 		console.log(`deleting thing ${uid}`)
 		return this._iotAEMdsRequest(`Things('${uid}')`, null, 'DELETE')
 	}
-	getSensorMapping (uid) {
-		return this._mappingRequest(`mappings/sensorthing?thingId=${uid}`)
+	getSensorMapping (thingId) {
+		return this._mappingRequest(`mappings/sensorthing?thingId=${thingId}`)
 	}
-	deleteSensorMapping (uid) {
-		console.log(`deleting sensor mapping for thing ${uid}`)
-		return this._mappingRequest(`mappings/sensorthing`, { "thingId": uid },'DELETE')
+	deleteSensorMapping (thingId) {
+		console.log(`deleting sensor mapping for thing ${thingId}`)
+		return this._mappingRequest(`mappings/sensorthing`, { "thingId": thingId },'DELETE')
 	}
 	getSensors () {
 		return this._mappingRequest(`sensors`)

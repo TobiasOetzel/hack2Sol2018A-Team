@@ -25,9 +25,10 @@ module.exports = {
 		const sensorMappingOfNewThing = await iotae.getSensorMapping(newThingId);
 
 		let deletingSensors = []
-		deletingSensors.push(iotae.deleteSensorMapping(currentSensorId))
+		deletingSensors.push(iotae.deleteSensorMapping(currentThingId))
+		console.log(`mapping ${JSON.stringify(sensorMappingOfNewThing, null, 3)}`)
 		let sensorIDOfTheNewThing = sensorMappingOfNewThing.SENSOR_ID;
-		deletingSensors.push(iotae.deleteSensorMapping(sensorIDOfTheNewThing))
+		deletingSensors.push(iotae.deleteSensorMapping(newThingId))
 
 		await Promise.all(deletingSensors)
 
