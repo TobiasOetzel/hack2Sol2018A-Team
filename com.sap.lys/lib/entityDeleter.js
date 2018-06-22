@@ -1,6 +1,5 @@
-
-const IotAEClient = require('./lib/IotAEClient')
-const IotServiceRestClient = require('./lib/IotServiceRestClient')
+const IotAEClient = require('./IotAEClient')
+const IotServiceRestClient = require('./IotServiceRestClient')
 const credentials = require('../credentials')
 const iotae = new IotAEClient();
 
