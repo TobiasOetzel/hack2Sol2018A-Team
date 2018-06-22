@@ -17,8 +17,16 @@ class IotAEClient {
 			'_objectGroup': '858F754DBE104D25BA4A9A6D5D170E6F'
 		}, 'POST')
 	}
+	deleteThing (uid) {
+		console.log(`deleting thing ${uid}`)
+		return this._iotAEMdsRequest(`Things('${uid}')`, null, 'DELETE')
+	}
 	getSensorMapping (uid) {
 		return this._mappingRequest(`mappings/sensorthing?thingId=${uid}`)
+	}
+	deleteSensorMapping (uid) {
+		console.log(`deleting sensor mapping for thing ${uid}`)
+		return this._mappingRequest(`mappings/sensorthing`, { "thingId": uid },'DELETE')
 	}
 	getSensors () {
 		return this._mappingRequest(`sensors`)
