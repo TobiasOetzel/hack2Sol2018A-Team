@@ -13,13 +13,7 @@ sap.ui.define([
 			var oItem = oEvent.getSource();
 			var oCtx  = oItem.getBindingContext();
 			var thingId =  oCtx.getProperty("ThingId");
-			$.get("/api/bulb/change/"+thingId, 
-				function(){
-					alert("success");
-				}, 
-				function(){
-					alert("error")
-				});
+			$.get("/api/bulb/change/"+thingId);
 		},
 		
 		handleNavigationWithContext: function() {

@@ -208,7 +208,13 @@
 					"async": true,
 					"viewLevel": 1,
 					"viewPath": "com.sap.lys.view",
-					"viewName": "QR"
+					"viewName": "QR",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl"
+				},
+				"crap": {
+					"viewType": "XML",
+					"viewName": "crap"
 				}
 			},
 			"additionalData": {

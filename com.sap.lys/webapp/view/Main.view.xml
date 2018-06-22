@@ -25,7 +25,7 @@
 			
 
 			<Panel width="auto" class="sapUiMediumMargin">
-				<List class="sapContrast sapContrastPlus" items="{path: '/Things', parameters : {expand:'DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState'}, templateShareable : 'true'}">
+				<List class="sapContrast sapContrastPlus" id="thingList" items="{path: '/Things', parameters : {expand:'DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState'}, templateShareable : 'true'}">
 						<items>
 							<NotificationListItem
 									class="listItem"

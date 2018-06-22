@@ -25,7 +25,7 @@
 			<Panel width="auto" class="sapUiMediumMargin">
 				<FlexBox width="100%" alignItems="Center" alignContent="Center" justifyContent="Center">
 				    <items>
-				        <Image xmlns="sap.m" height="200px" id="image0" src="./images/qr.svg"/>
+				        <Image class="qr" xmlns="sap.m" height="200px" id="image0" src="./images/qr.svg"/>
 				    </items>
 				</FlexBox>
 				
