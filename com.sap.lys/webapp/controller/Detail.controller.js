@@ -9,13 +9,21 @@ sap.ui.define([
 			oRouter.navTo("Main", {}, true);
 		},
 		
-		onReplacedPressed : function(){
-			alert("Where the magic happens");	
+		onReplacedPressed : function(oEvent){
+			var oItem = oEvent.getSource();
+			var oCtx  = oItem.getBindingContext();
+			var thingId =  oCtx.getProperty("ThingId");
+			$.get("/api/bulb/change/"+thingId, 
+				function(){
+					alert("success");
+				}, 
+				function(){
+					alert("error")
+				});
 		},
 		
 		handleNavigationWithContext: function() {
 			var that = this;
-			var entitySet;
 			var sRouteName;
 
 			function _onBindingChange(oEvent) {
@@ -53,7 +61,6 @@ sap.ui.define([
 					var oNavigation = oManifest["sap.ui5"].routing.additionalData;
 					var oContext = oNavigation[that.getView().getViewName()];
 					sRouteName = oContext.routeName;
-					entitySet = oContext.entitySet;
 					oRouter.getRoute(sRouteName).attachMatched(_onRouteMatched, that);
 				}
 			}

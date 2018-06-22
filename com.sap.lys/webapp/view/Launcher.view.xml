@@ -1,4 +1,10 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="com.sap.lys.controller.Launcher">
+<mvc:View 
+
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	controllerName="com.sap.lys.controller.Launcher">
 	
 	<App id="idAppControl">
 		<pages>
@@ -12,11 +18,17 @@
 							<html:h2>sustainable and economical</html:h2>		
 						</html:div>
 					</html:div>
-					
 
+							
+					<html:div class="slogan">
+						Automating each and every light in your Factory 4.0 with <html:br/>SAP Leonardo
+					</html:div>
+				
+		
 	         	    <GenericTile header="Work Queue" subheader="open issues to solve" class="tile1 tile" press="onShowThings"/>
 			        <GenericTile header="Locations" subheader="sensor overview" class="tile2 tile" press="onShowMap"/>
 			        <GenericTile header="Test" subheader="test a sensor" class="tile3 tile" press="onShowTest"/>
+		
 
 				</content>
 				<footer>
