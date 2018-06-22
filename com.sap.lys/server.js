@@ -1,35 +1,22 @@
-const approuter = require('@sap/approuter');
-const IoTAEClient = require('./lib/IoTAEClient')
+const approuter = require('@sap/approuter')
+const IotAEClient = require('./lib/IotAEClient')
 
 var ar = approuter();
 
 ar.beforeRequestHandler.use("/api/bulb/change", function changeBulbHandler(req, res, next) {
-    if (req.method !== "POST") {
-        httpMethodNotAllowed(res);
-    } else {
-        changeBulb(req,res);
-    }
+    changeBulb(req,res);
 });
 
-function httpMethodNotAllowed(res) {
-    res.statusCode = 405;
-    res.end("Method not allowed");
-}
-
-function httpBadMethod(res) {
-    res.statusCode = 400;
-    res.end("Bad request");
-}
-
-function changeBulb(req, res) {
-    var currentThing = req.url.split("/")[1];
-    if (!currentThing) {
-        httpBadMethod(res);
+async function changeBulb(req, res) {
+    var currentThingId = req.url.split("/")[1];
+    if (!currentThingId) {
+        httpBadRequest(res);
     }
 
-    const iotae = new IoTAEClient();
+    const iotae = new IotAEClient();
 
-    iotae.getThings().then(function(things) {
+    try {
+        let things = await iotae.getThings();
         // identify new thing
         //   filter things from device 4? -- nope
         //   find the one without location & hue type = new thing
@@ -42,6 +29,8 @@ function changeBulb(req, res) {
         });
         console.log(newThing);
 
+		//let sensorMapping = iotae.getSensorMapping(currentThingId);
+		//sensorMapping.find(mapping => mapping)
         //   get sensor of broken thing
         //   get sensor of new thing
         //   delete mapping of both things
@@ -49,14 +38,20 @@ function changeBulb(req, res) {
         //   delete sensor of broken thing
         //   delete new thing
 
-        return things; // TODO getSensorMapping(thing._id)
-    }).then(function(mapping) {
-        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.writeHead(200, {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache'
+        });
         res.end(JSON.stringify(mapping));
-    }).catch(function(reason) {
+    } catch (e) {
         res.writeHead(500);
         res.end(reason.error);
-    });
+    }
+}
+
+function httpBadRequest(res) {
+    res.statusCode = 400;
+    res.end("Bad request");
 }
 
 ar.start();
