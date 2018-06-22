@@ -17,8 +17,8 @@
 			<html:div class="launchHeader">
 			    <html:img src="./images/test_green.svg"  class="icon" />
 				<html:div>
-					<Title text="Test a Bulb" level="H1"/>		
-					<html:h2>Test the functionality fo a bulb</html:h2>		
+					<Title text="Test a Light" level="H1"/>		
+					<html:h2>Test the functionality of a light</html:h2>		
 				</html:div>
 			</html:div>
 			

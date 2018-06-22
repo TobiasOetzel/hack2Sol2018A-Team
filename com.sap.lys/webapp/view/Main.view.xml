@@ -30,11 +30,11 @@
 							<NotificationListItem
 									class="listItem"
 									title="{ThingDescription}"
-									description="{= ${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable} ? 'Device not reachable': 'Device is broken'} "
+									description="{= ${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable} ? 'Reachable': 'Device is broken'} / {= ${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.switchedOn} ? 'On': 'Off'}"
 									showCloseButton="false"
 									datetime=""
 									unread="true"
-									priority="{= ${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable} ? 'Medium': 'High' }"
+									priority="{= ${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable} ? 'Low': 'High' }"
 									press="onListItemPressed"
 									authorPicture="sap-icon://lightbulb"/>
 						</items>

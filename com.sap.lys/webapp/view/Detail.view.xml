@@ -4,6 +4,7 @@
 	xmlns="sap.m" 
 	xmlns:l="sap.ui.layout" 
 	xmlns:f="sap.ui.layout.form" 
+		xmlns:tnt="sap.tnt"
 	xmlns:html="http://www.w3.org/1999/xhtml" 
 	controllerName="com.sap.lys.controller.Detail">
  	
@@ -24,6 +25,43 @@
 				</html:div>
 			</html:div>
 			
+				<VBox class="sapUiSmallMargin">
+					<f:SimpleForm 
+						editable="false"
+						layout="ResponsiveGridLayout"
+						title="Status"
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="4"
+						emptySpanL="4"
+						emptySpanM="4"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" >
+						<f:content>
+							<Label text="Reachable" />
+							<tnt:InfoLabel
+							text="{= ${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable} ? 'Connected': 'Not Reachable'} " 
+							renderMode="Narrow" 
+							colorScheme="{= ${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable} ? 7: 3}" 
+							displayOnly= "true"/>
+
+							<Label text="Status" />
+							<tnt:InfoLabel
+								text="{= ${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.switchedOn} ? 'On': 'Off'}" 
+								renderMode="Narrow" 
+								colorScheme="{=${DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.switchedOn} ? 2: 9}" 
+								displayOnly="true"
+							/>
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+				
 			<Panel width="auto" class="sapUiResponsiveMargin">
 				<VBox class="sapUiSmallMargin">
 					<f:SimpleForm id="SimpleFormDisplay354"
@@ -56,35 +94,6 @@
 					</f:SimpleForm>
 				</VBox>
 
-
-				<VBox class="sapUiSmallMargin">
-					<f:SimpleForm 
-						editable="false"
-						layout="ResponsiveGridLayout"
-						title="Status"
-						labelSpanXL="3"
-						labelSpanL="3"
-						labelSpanM="3"
-						labelSpanS="12"
-						adjustLabelSpan="false"
-						emptySpanXL="4"
-						emptySpanL="4"
-						emptySpanM="4"
-						emptySpanS="0"
-						columnsXL="1"
-						columnsL="1"
-						columnsM="1"
-						singleContainerFullSize="false" >
-						<f:content>
-							<Label text="Reachable" />
-							<Text text="{DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.reachable}" />
-
-							<Label text="Switched On" />
-							<Text text="{DYN_ENT_hack2sol_team0_hack2sol_ateam__bulbState/bulbState.switchedOn}" />
-						</f:content>
-					</f:SimpleForm>
-				</VBox>
-				
 				<Button text="Press after Replace" press="onReplacedPressed"></Button>
 			</Panel>
 			
