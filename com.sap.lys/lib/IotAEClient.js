@@ -35,6 +35,9 @@ class IotAEClient {
 		let sensors = await this.getSensors()
 		let foundSensor = sensors.find(sensor => sensor.NAME === uid)
 		let sensorId = foundSensor.ID
+		return createSensorMappingWithSensorId(sensorId, thingId)
+	}
+	createSensorMappingWithSensorId (sensorId, thingId) {
 		console.log(`creating sensor mapping for ${thingId} and sensor id ${sensorId}`)
 		return this._mappingRequest(`mappings/sensorthing`, [
 			{
@@ -43,6 +46,7 @@ class IotAEClient {
 			}
 		], 'POST')
 	}
+
 	getHierarchyElements () {
 		return this._iotAEThingHierarchyRequest(`ThingHierarchy/v1/ThingHierarchies('A3CB03F0B166D51216000B02288EC14B')?$expand=ThingHierarchyElements`)
 	}
