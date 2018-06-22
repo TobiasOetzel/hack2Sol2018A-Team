@@ -55,6 +55,13 @@
       }
     },
     {
+      "path": "/api",
+      "target": {
+        "type": "destination",
+        "name": "lys-api"
+      }
+    },
+    {
       "path": "/resources",
       "target": {
         "type": "service",
